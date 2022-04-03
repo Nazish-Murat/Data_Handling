@@ -1,0 +1,109 @@
+# =============================================================================
+# # import Libraries
+# =============================================================================
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# =============================================================================
+# #load datasets
+# =============================================================================
+
+df = sns.load_dataset('titanic')
+df_1000 = df.sample(100)   #selcting first 100 samples
+df_1 = sns.load_dataset('tips')
+# =============================================================================
+# #data shape
+# =============================================================================
+
+df.shape
+rows, cols = df.shape
+print('Number of Rows: ',rows)    #instances
+print('Number of Columns: ',cols)    #series
+
+df_1.shape
+rows, cols = df_1.shape
+print('Number of Rows: ',rows)
+print('Number of Columns: ',cols)
+
+# =============================================================================
+# #Data Structure
+# =============================================================================
+
+df.info()
+
+df_1.info()
+# =============================================================================
+# # Find Missing values
+# =============================================================================
+
+df.isnull()
+df.isnull().sum()
+
+df_1.isnull()
+df_1.isnull().sum()
+
+# =============================================================================
+# #percent calculation of missing values:
+# =============================================================================
+    
+df.isnull().sum()/df.shape[0]*100
+
+df_1.isnull().sum()/df_1.shape[0]*100
+
+# =============================================================================
+# #split variable for new columns needed/ Feature Engineering
+# =============================================================================
+
+city = pd.DataFrame(np.array([['lahore, Pakistan',67, 100],
+                               ['Beijing, China',5,6],
+                               ['Berlin, Germany',8,9]]),
+                    columns=['address','males','female'])
+                             
+
+
+city.head()
+
+
+city[['City','Country']]=city['address'].str.split(', ',expand=True)
+
+
+# =============================================================================
+# #type casting/conversion of data type
+# =============================================================================
+
+city.info()
+
+            
+
+city[['males','female']]=city[['males','female']].astype('int')   #to convert into int
+city[['City','Country']]=city[['City','Country']].astype(str)
+
+
+
+df.describe()   # summary Statistics
+df_1.describe()          # summary Statistics
+
+
+df['age'].value_counts()      # value count of a specific column
+df['class'].value_counts()
+
+df['class'].unique()     #finding unique value in a column/series
+
+df[df.embark_town == 'Queenstown']  #dealing with duplicates
+
+sns.histplot(df)
+sns.histplot(df['age'])
+sns.histplot(data=df, x='age',hue='sex')
+sns.histplot(data=df, x='age',hue='sex',multiple='stack')
+
+df['age'].agg(['skew','kurtosis']).transpose()  # measure its skew and kurtosis
+
+sns.boxplot(df['age'], color='red')   #boxplot
+
+corr = df.corr(method='pearson')           #Correlation 
+sns.heatmap(corr,annot=True)   #heatmap
+sns.pairplot(corr)
+corr.style.background_gradient(cmap='coolwarm')
