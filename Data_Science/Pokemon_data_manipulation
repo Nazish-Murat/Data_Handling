@@ -1,0 +1,33 @@
+import pandas as pd
+data = pd.read_csv("Pokemon.csv")
+HL_Attack = data["Attack"].mean()
+
+def set_attack(val):
+    if val < HL_Attack:
+        return "Low Attack"
+    elif val == HL_Attack:
+        return "Average Attack"
+    else:
+        return "High Attack"   
+data["HL_Attack"] = data["Attack"].apply(set_attack)        
+HL_Speed = data["Speed"].mean()
+def set_speed(val):
+    if val < HL_Speed:
+        return "Low Speed"
+    elif val == HL_Speed:
+        return "Average Speed"
+    else:
+        return "High Speed"    
+data["HL_Speed"] = data["Speed"].apply(set_speed)    
+    
+HL_HP = data["HP"].mean()
+
+def set_HP(val):
+    if val < HL_HP:
+        return "Low Horse Power"
+    elif val == HL_HP:
+        return "Average Horse Power"
+    else:
+        return "High Horse Power"   
+data.groupby("Type 1").groups
+data.head()
