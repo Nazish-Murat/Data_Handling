@@ -1,0 +1,203 @@
+
+# =============================================================================
+# # Displying on screen
+# =============================================================================
+# This '#' is used for comments  
+#  Use Cntrl + / for commenting line
+
+# print ("Print")
+print ('Print line')
+print (3+99)
+print(2+3)
+print("Hello World")
+print("Let's Learn Python ")
+print (' Test Single Quote')    # Quotes display
+print (" Test Double Quotes")
+print ( ''' Test Triple Quotes ''')
+basket=input("What's your favourite fruit?  ")  #Asking from user by Using input function
+print(basket)
+#Advance input function: Type 1
+name=input("What's your name? ")
+greetings='Hello '
+print(greetings, name)
+#Advance input function: Type 2
+name=input("What's your name? ")
+age = input ("What's your age? ")
+greetings='Hello '
+print(greetings, name, ", You're still young.") 
+
+# =============================================================================
+# Math operation
+# =============================================================================
+
+print(5+3)    # 4 basic operators
+print(4-1)
+print(3*4)
+print(7/2)
+print(7//2)     # remove decimal and divide
+print(7%2)      # Check Remainder
+print(3**2)     # Exponent
+print(4**3*5/3-8+19)        # Merging all operators - PEDMAS rule
+
+# Logical Operator is True/False , O/1 or Yes/No.
+print(4==4)     # Equal to                       ==
+print(5!=5)     # not equal to                   !=
+print(78<55)    # less than                      < 
+print(78>55)    # greater than                   >
+print(44<=40)   # less than and equal to         <=
+print(44>=40)   # greater than and equal to      <=
+age=20
+limit=15
+print(age>= limit)  #Checking age is greater than or equal to the limit
+age= int (input("Enter Age: ")) #input from user
+limit= 15
+print (age>= limit)
+
+# =============================================================================
+# Variable Declaration 
+# =============================================================================
+
+x=5
+print (x)
+x=x+10      # changing x value, by adding 10
+print (x)
+y='Learning Variables'     #simple variable assignment
+print (y)
+print(type(x))          # Checking Type of Varibles:
+print(type(y))
+basket='Mangoes'# Delete a variable
+print(basket)
+del basket          # If we print(basket), it will give error
+# print(basket) 
+
+# =============================================================================
+# Type Casting
+# =============================================================================
+
+x= 3       # type int
+y= 3.2     # type float
+z= 'Hi '   # type string
+x= y*x     # Implicit Coversion
+print(x, " Type of x: ", type(x))
+age= input("Enter your age: ")  # Explicit Conversion
+age= int(age) # Changing type
+print (age, "Type: ", type(age))
+
+# =============================================================================
+# If-else Statement
+# =============================================================================
+age= 4
+required = 6
+if age == required:
+    print('You can join school.')
+elif age < required:
+    print ('You cannot join the school.')
+elif age <= 2:
+    print ('You should Take Care of him, because he is a baby.')
+else:
+    print ('You can join higher classes.')
+
+# =============================================================================
+# Function 
+# =============================================================================
+
+# Defining Function Methord: 1
+def code():
+    print(" We are Learning Python")
+    print(" We are Learning Python")
+code() # calling function
+
+# Defining Function Methord: 2
+def code():
+    text= " We are Learning Python"
+    print(text)
+    print(text)
+code() # calling function
+
+# Defining Function Methord: 3
+def code(text):
+    print(text)
+    print(text)
+code(" We are Learning Python") # calling function
+
+# Defining School Age Calculation Using Function and if,else,elif Statements
+def school_calculation(age):
+    if age == 5:
+        print("The Kid can go to school.")
+    elif age > 5:
+        print("The Kid should go to higher class.")
+    else:
+        print ("The Kid is still a baby.")
+school_calculation(7)
+
+# Finding future age 
+def FutureAge (age):
+    NewAge= age + 20
+    return (NewAge)
+
+FuturePredictedAge = FutureAge (25)
+print(FuturePredictedAge)
+
+# =============================================================================
+# Loop
+# =============================================================================
+
+# Loop 1: While
+x=0
+while (x<=5):
+    print(x)
+    x=x+1
+    
+# Loop 2: For
+for x in range (5,10):
+    print(x)  # The data in range will be printed.
+
+days= ['Mon','Tues','Wed','Thu','Fri','Sat','Sun'] # Working with Arrays
+for d in days:
+    print (d)
+    
+# Using break in Array
+days= ['Mon','Tues','Wed','Thu','Fri','Sat','Sun'] 
+for d in days:
+    if d == 'Fri':
+        break        # break means stopping the loop
+    print (d)
+    
+# Using continue in Array
+days= ['Mon','Tues','Wed','Thu','Fri','Sat','Sun'] 
+for d in days:
+    if d == 'Fri':
+        continue        # continue means skiping value in the loop
+    print (d)
+
+# Using pass in Array
+days= ['Mon','Tues','Wed','Thu','Fri','Sat','Sun'] 
+
+for d in days:
+    if d == 'Fri':
+        pass        # pass means to do nothing in the loop
+    print (d)
+
+# =============================================================================
+# importing library
+# =============================================================================
+import math   # Print value of pi, by importing library
+print("Value of pi is : ", math.pi)
+import statistics
+x=[123,45,67,89,98]
+print("Average of array is :", statistics.mean(x))
+
+# =============================================================================
+# # syntax error
+# =============================================================================
+
+#print ("go)  #  Here the comma is missing
+
+# Run-Time Error
+# print(25/0) # Error in the value
+
+# Semantic Error
+name = '***'
+# print (" Hello name") # It will print the command without showing error
+print (" Hello", name)
+
