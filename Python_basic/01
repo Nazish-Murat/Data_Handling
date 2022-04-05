@@ -201,3 +201,24 @@ name = '***'
 # print (" Hello name") # It will print the command without showing error
 print (" Hello", name)
 
+# =============================================================================
+# Indexing
+# =============================================================================
+a = 'python tutorial'
+a[0]  #p
+a[1]        #y
+len(a)      #15
+a[0:6]  #Python
+a[-6:-1]  #toria
+a[-6:13]  #tori
+
+# =============================================================================
+# String_Method
+# =============================================================================
+a.capitalize()  #Python tutorial
+a.upper()       #PYTHON TUTORIAL
+a.lower()       #python tutorial
+a.replace('p', 'to')        #toython tutorial
+a.count('A')        #
+a.find('is')        #
+
